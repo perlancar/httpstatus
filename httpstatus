@@ -131,7 +131,7 @@ if (@ARGV==1) {
         for (sort keys %StatusCode) {
             my $msg = $StatusCode{$_};
             my $msg_str = (ref $msg ? join("; ", @$msg) : $msg);
-            next unless $msg_str =~ /$key/;
+            next unless $msg_str =~ /$key/i;
             print "$_ $msg_str\n";
         }
     }
